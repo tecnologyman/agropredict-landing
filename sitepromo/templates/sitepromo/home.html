@@ -1,0 +1,210 @@
+{% extends "sitepromo/base.html" %}
+{% block content %}
+
+<!-- HERO -->
+<section class="hero d-flex align-items-center">
+  <div class="container text-center text-white" data-aos="fade-up">
+    <h1 class="display-5 fw-bold mb-3">La agricultura del futuro se predice hoy</h1>
+    <p class="sublead lead mb-4">
+      Plataforma integral para <strong>predicción frutícola</strong>, <strong>dashboard de gestión</strong> y
+      <strong>multiherramientas</strong> con <strong>chatbot IA</strong>. Visualizaciones claras, decisiones
+      accionables y experiencia personalizable con tus datos.
+    </p>
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
+  <a class="btn btn-gradient btn-lg" href="{{ ENTRADAS_URL }}" target="_blank" rel="noopener">
+    🎟️ Reservar entrada gratuita
+  </a>
+  <a class="btn btn-utfsm-yellow btn-lg" href="{{ FERIA_URL }}" target="_blank" rel="noopener">
+    👀 Ver Feria de Software Viña
+  </a>
+</div>
+
+</section>
+
+<!-- QUÉ ES + PITCH -->
+<section id="que-es" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h2 class="fw-bold">¿Qué es <span class="grad-text">{{ PROJECT_NAME }}</span>?</h2>
+        <p class="text-secondary">
+          {{ PROJECT_NAME }} es una plataforma desarrollada en la USM (Sede Viña del Mar) junto a <strong>Neering</strong> para apoyar la
+          toma de decisiones frutícolas en Chile. Hoy evolucionó a una <em>navaja suiza</em> para el sector: predicción, dashboard,
+          chatbot IA y herramientas de análisis, todo en un mismo lugar — y completamente <strong>personalizable con tus datos</strong>.
+        </p>
+        <ul class="list-checked">
+          <li>Predicción frutícola por cultivo y región.</li>
+          <li>Dashboard ejecutivo con indicadores clave.</li>
+          <li>Chatbot IA para dudas rápidas y soporte en sitio.</li>
+          <li>Multiherramientas: reportería, comparativas y más.</li>
+          <li>Experiencia adaptable a tu realidad productiva.</li>
+        </ul>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card-lite">
+          <h5 class="fw-semibold mb-3">Pitch corto</h5>
+          <p class="mb-0">“Convertimos datos complejos en decisiones simples para gestores y equipos frutícolas.”</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section id="por-que" class="py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12" data-aos="fade-up">
+        <h2 class="fw-bold">¿Por qué AgroPredict?</h2>
+        <p class="text-secondary">
+          Variabilidad climática, escasez hídrica y datos dispersos hacen difícil planificar. Con {{ PROJECT_NAME }} integramos fuentes,
+          simplificamos la interpretación y entregamos recomendaciones accionables para perfiles <strong>gerenciales y administrativos</strong>.
+        </p>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in">
+        <div class="feature">
+          <i class="fa-solid fa-droplet"></i>
+          <h6>Uso del agua</h6>
+          <p>Indicadores para riego eficiente y decisiones oportunas.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="feature">
+          <i class="fa-solid fa-robot"></i>
+          <h6>Chatbot IA</h6>
+          <p>Resuelve dudas y guía el flujo de trabajo al instante.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="feature">
+          <i class="fa-solid fa-toolbox"></i>
+          <h6>Multiherramienta</h6>
+          <p>Reportería, comparativas, alertas y herramientas en un lugar.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="feature">
+          <i class="fa-solid fa-sliders"></i>
+          <h6>100% Personalizable</h6>
+          <p>Se adapta a tus datos, procesos y unidades de negocio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como-funciona" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-4" data-aos="fade-up">¿Cómo funciona?</h2>
+    <div class="row g-4">
+      <div class="col-md-2" data-aos="fade-up">
+        <div class="step">
+          <span class="badge text-bg-primary">1</span>
+          <h6>Configura tu contexto</h6>
+          <p>Define cultivos, región y fuentes de datos.</p>
+        </div>
+      </div>
+      <div class="col-md-2" data-aos="fade-up" data-aos-delay="100">
+        <div class="step">
+          <span class="badge text-bg-primary">2</span>
+          <h6>Integra datos</h6>
+          <p>Clima, históricos y variables territoriales.</p>
+        </div>
+      </div>
+      <div class="col-md-2" data-aos="fade-up" data-aos-delay="200">
+        <div class="step">
+          <span class="badge text-bg-primary">3</span>
+          <h6>Predice y visualiza</h6>
+          <p>Métricas claras y visualizaciones amigables.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="step">
+          <span class="badge text-bg-primary">4</span>
+          <h6>Chatbot IA</h6>
+          <p>Consulta y obtén sugerencias directamente en la plataforma.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="step">
+          <span class="badge text-bg-primary">5</span>
+          <h6>Acciona y personaliza</h6>
+          <p>Planifica, exporta reportes y ajusta a tu operación.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN SÍGUENOS -->
+<section id="siguenos" class="py-5 bg-body-tertiary">
+  <div class="container" data-aos="zoom-in">
+    <div class="follow-box p-4 text-center">
+      <h2 class="fw-bold mb-2">¡Síguenos para noticias, sorteos y demos!</h2>
+      <p class="subtitle mb-4">No te pierdas actualizaciones, lanzamientos y contenido técnico.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a class="btn-social btn-ig" href="{{ IG_URL }}" target="_blank" rel="noopener">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        <a class="btn-social btn-li" href="{{ LI_URL }}" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-4" data-aos="fade-up">¿Quiénes somos?</h2>
+    <p class="text-secondary" data-aos="fade-up" data-aos-delay="50">
+      Somos un equipo de 5 integrantes de <strong>Ingeniería en Informática — USM Viña del Mar</strong> en colaboración con <strong>Neering</strong>.
+      Enfocado en perfiles <strong>gerenciales y administrativos</strong>, integrando <em>dashboard</em>, <em>navaja de herramientas</em> y <em>chatbot IA</em>.
+    </p>
+<div class="row g-4">
+  {% for member in team %}
+  <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up">
+    <div class="team-card p-3 h-100">
+      <div class="d-flex align-items-center gap-3">
+        <img src="{{ member.img }}" alt="team" loading="lazy">
+        <div>
+          <div class="fw-semibold">{{ member.name }}</div>
+          <div class="text-secondary small">{{ member.role }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+
+    <div class="mt-4">
+      <div class="cta-box d-flex flex-wrap align-items-center justify-content-between gap-3" data-aos="fade-up">
+        <div>
+          <p class="small text-uppercase text-muted mb-1">Feria de Software — Viña 2025</p>
+          <h5 class="fw-semibold mb-0">Ven a ver el demo y vota por {{ PROJECT_NAME }}</h5>
+        </div>
+        <div class="d-flex gap-2">
+          <a class="btn btn-success" href="{{ ENTRADAS_URL }}" target="_blank" rel="noopener">🎟️ Entrada gratuita</a>
+          <a class="btn btn-ghost" href="{{ FERIA_URL }}" target="_blank" rel="noopener">ℹ️ Más info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final py-5">
+  <div class="container text-center" data-aos="zoom-in">
+    <h3 class="fw-bold mb-3">¿Nos vemos en la Feria?</h3>
+    <p class="text-secondary mb-4">Explora el prototipo, conversa con el equipo y apóyanos con tu voto.</p>
+    <a class="btn btn-lg btn-gradient" href="{{ ENTRADAS_URL }}" target="_blank" rel="noopener">Reservar entrada gratuita</a>
+  </div>
+</section>
+
+{% endblock %}
