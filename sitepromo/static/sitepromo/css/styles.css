@@ -160,7 +160,7 @@ body {
 .hero {
   background: linear-gradient(135deg, #b52e91, #5b42c4, #7437b0);
   background-size: 200% 200%;
-  animation: gradientShift 12s ease infinite;
+  animation: gradientShift 4s ease infinite;
 }
 
 /* Suaviza las transiciones generales de aparición */
@@ -258,7 +258,7 @@ body {
 .navbar.scrolled {
   background: linear-gradient(90deg, #b52e91, #5b42c4, #7437b0);
   background-size: 200% 200%;
-  animation: navbarShift 8s ease infinite;
+  animation: navbarShift 4s ease infinite;
 }
 
 @keyframes navbarShift {
@@ -274,4 +274,17 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+.btn-success-gradient {
+  background: linear-gradient(90deg, #3ddc84, #2fbf71);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(63, 191, 113, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-success-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(63, 191, 113, 0.6);
+  color: #fff;
+}
 
