@@ -1,0 +1,345 @@
+/* --------- UI Kit (AgroPredict) --------- */
+/* --- Fix para evitar que el navbar tape contenido --- */
+body {
+  padding-top: 70px; /* espacio para el navbar fijo */
+}
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* más espacio en móvil */
+  }
+}
+
+:root {
+  --brand-pink: #ff5bbd;
+  --brand-purple: #7b61ff;
+  --brand-green: #16a34a;
+  --brand-green-600: #0f8a3b;
+  --utfsm-red: #e31e24;
+  --utfsm-blue: #0033a0;
+  --utfsm-yellow: #ffd200;
+  --text-900: #111827;
+  --text-700: #374151;
+  --card-bg: #ffffff;
+  --border: rgba(0,0,0,.08);
+  --shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--text-900);
+  background-color: #fff;
+}
+
+/* General containers */
+.container, .container-lg, .container-xl { max-width: 1280px; }
+
+/* Texto con gradiente */
+.grad-text { 
+  background: linear-gradient(90deg, var(--brand-pink), var(--brand-purple));
+  -webkit-background-clip: text; 
+  color: transparent;
+}
+
+/* HERO con fondo más oscuro */
+.hero {
+  min-height: 50vh;
+  padding: 4rem 1rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #b52e91, #5b42c4);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  /* border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px; */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+
+/* efecto de overlay suave para profundidad */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15); /* capa sutil de sombra */
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1; /* asegura que texto y botones queden sobre la sombra */
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+}
+
+.hero .sublead {
+  font-size: 1.05rem;
+  max-width: 860px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Cards / Boxes */
+.card-lite, .feature, .step, .cta-box, .team-card, .follow-box {
+  background: var(--card-bg); 
+  border: 1px solid var(--border); 
+  border-radius: 20px;
+  padding: 20px; 
+  box-shadow: var(--shadow);
+}
+
+/* Buttons */
+.btn-gradient {
+  background-image: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+  color: #fff; border: 0; border-radius: 12px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-gradient:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(123,97,255,.3); }
+
+.btn-ghost {
+  background: #fff; color: var(--text-900);
+  border: 1px solid var(--border); border-radius: 12px;
+}
+.btn-ghost:hover { border-color: rgba(0,0,0,.18); }
+
+.btn-success {
+  background: linear-gradient(135deg, var(--brand-green), var(--brand-green-600));
+  border: none; border-radius: 12px;
+}
+.btn-success:hover { filter: brightness(1.03); }
+
+/* Redes sociales grandes */
+.btn-social {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .9rem 1.3rem; border-radius: 14px;
+  color: #fff; font-weight: 500;
+  transition: transform .15s ease;
+}
+.btn-social:hover { transform: translateY(-1px); color: #fff; }
+.btn-ig { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4); }
+.btn-li { background: #0a66c2; }
+
+/* Botón principal: Reservar entrada */
+.btn-gradient.btn-lg {
+  background-image: linear-gradient(135deg, #ff5bbd, #7b61ff);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 14px;
+  font-weight: 600;
+  padding: 0.9rem 1.6rem;
+  box-shadow: 0 6px 16px rgba(123,97,255,0.3);
+}
+/* Más contraste en hover */
+.btn-gradient.btn-lg:hover {
+  background-image: linear-gradient(135deg, #d03da1, #6440da);
+}
+
+.btn-utfsm-yellow {
+  background-color: #ffd200;
+  color: #000;
+  font-weight: 600;
+  border-radius: 14px;
+  padding: 0.9rem 1.6rem;
+  border: 2px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-utfsm-yellow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+
+
+/* Equipo */
+.team-card img {
+  width: 72px; height: 72px;
+  object-fit: cover; border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+/* Animaciones AOS */
+[data-aos] { transition: all .6s ease; }
+
+
+.hero {
+  background: linear-gradient(135deg, #b52e91, #5b42c4, #7437b0);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Suaviza las transiciones generales de aparición */
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  transition-duration: 0.8s;
+}
+
+body {
+  background: linear-gradient(180deg, #f7f8fa 0%, #eef0f4 100%);
+  color: var(--text-900);
+}
+
+/* Navbar moderna */
+/* --- NAVBAR Dinámica con gradiente --- */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  background: transparent;
+  padding: 0.8rem 0;
+  backdrop-filter: blur(8px);
+}
+
+.navbar.scrolled {
+  background: linear-gradient(90deg, #b52e91, #5b42c4);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.navbar a.nav-link,
+.navbar-brand span {
+  color: #222;
+  transition: color 0.4s ease;
+}
+
+.navbar.scrolled a.nav-link,
+.navbar.scrolled .navbar-brand span {
+  color: #fff !important;
+}
+
+.navbar.scrolled .nav-link:hover {
+  color: #ffd200 !important; /* amarillo UTFSM */
+}
+
+/* Logo adaptable */
+.navbar-brand img {
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  transition: filter 0.3s ease;
+}
+.navbar.scrolled .navbar-brand img {
+  filter: brightness(0) invert(1);
+}
+
+/* Textos más fluidos y adaptables */
+h1, h2, h3, h4 {
+  word-break: keep-all;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.9rem !important;
+  }
+  .hero .sublead {
+    font-size: 0.95rem !important;
+  }
+  .btn.btn-lg {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+.navbar-brand img {
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.navbar:not(.scrolled) .navbar-brand img {
+  filter: brightness(1) contrast(1);
+}
+
+.navbar.scrolled .navbar-brand img {
+  filter: brightness(1.4) contrast(1.1) saturate(1.2);
+  transform: scale(1.05);
+}
+
+
+body {
+  background: radial-gradient(circle at 50% 20%, #f8f9fb 0%, #eef0f4 100%);
+}
+
+.navbar.scrolled {
+  background: linear-gradient(90deg, #b52e91, #5b42c4, #7437b0);
+  background-size: 200% 200%;
+  animation: navbarShift 4s ease infinite;
+}
+
+@keyframes navbarShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.btn-success-gradient {
+  background: linear-gradient(90deg, #3ddc84, #2fbf71);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(63, 191, 113, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-success-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(63, 191, 113, 0.6);
+  color: #fff;
+}
+
+/* --- Botón en vivo --- */
+.btn-live {
+  background: linear-gradient(90deg, #ff0000, #ff4d4d, #ff0000);
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 14px;
+  padding: 0.9rem 1.6rem;
+  animation: livePulse 1.8s infinite;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+.btn-live:hover {
+  filter: brightness(1.15);
+}
+
+@keyframes livePulse {
+  0% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
+  100% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.4); }
+}
+
+/* --- Hero borde animado en modo LIVE --- */
+.hero.live-mode {
+  border: 4px solid #ff0000;
+  animation: borderFlash 2s ease-in-out infinite;
+}
+
+@keyframes borderFlash {
+  0% { border-color: #ff0000; }
+  50% { border-color: #ff4d4d; }
+  100% { border-color: #ff0000; }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.7rem !important;
+  }
+  .hero .sublead {
+    font-size: 0.9rem !important;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -68,26 +68,7 @@ body{
 .hero .sublead{ font-size:1.05rem; max-width:860px; margin:0 auto; color:rgba(255,255,255,.9); }
 
 /* Botones del hero */
-.hero .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 230px;
-  height: 56px;
-  border-radius: 14px;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.9rem 1.4rem;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-/* Base común para hover */
-.hero .btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.05);
-}
-
+.hero .btn{ min-width:220px; text-align:center; }
 .hero .d-flex.gap-3 {
   gap: 1rem;
   flex-wrap: wrap;
@@ -107,38 +88,27 @@ body{
 /* ---------------------------------------------------------
    Botones
    ---------------------------------------------------------*/
-/* --- Botón Gradiente principal --- */
-.btn-gradient {
-  background-image: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
-  color: #fff;
-  border: none;
-  box-shadow: 0 6px 14px rgba(123, 97, 255, 0.35);
+.btn-gradient{
+  background-image:linear-gradient(135deg,var(--brand-pink),var(--brand-purple));
+  color:#fff; border:0; border-radius:12px; font-weight:600;
+  transition: all .2s ease;
 }
-.btn-gradient:hover {
-  box-shadow: 0 8px 20px rgba(123, 97, 255, 0.5);
-}
+.btn-gradient:hover{ transform: translateY(-1px); box-shadow:0 10px 24px rgba(123,97,255,.3); }
 
-/* --- Botón amarillo UTFSM --- */
-.btn-utfsm-yellow {
-  background-color: var(--utfsm-yellow);
-  color: #000;
-  border: none;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+.btn-utfsm-yellow{
+  background-color:var(--utfsm-yellow);
+  color:#000; font-weight:600; border-radius:14px;
+  padding:.9rem 1.6rem; border:2px solid rgba(0,0,0,.05);
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  transition:transform .15s ease, box-shadow .15s ease;
 }
-.btn-utfsm-yellow:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
+.btn-utfsm-yellow:hover{ transform:translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,.2); }
 
-/* --- Botón verde éxito --- */
-.btn-success {
-  background: linear-gradient(135deg, var(--brand-green), var(--brand-green-600));
-  color: #fff;
-  border: none;
-  box-shadow: 0 6px 14px rgba(0, 128, 64, 0.3);
+.btn-success{
+  background:linear-gradient(135deg,var(--brand-green),var(--brand-green-600));
+  border:none; border-radius:14px; color:#fff; font-weight:600;
 }
-.btn-success:hover {
-  box-shadow: 0 8px 20px rgba(0, 128, 64, 0.45);
-}
+.btn-success:hover{ filter:brightness(1.1); }
 
 /* ---------------------------------------------------------
    Tarjetas / utilitarios
@@ -191,15 +161,10 @@ body{
    ---------------------------------------------------------*/
 /* Usamos outline para que NUNCA empuje el layout */
 .hero.live-mode{ outline:3px solid rgba(255,0,0,.75); outline-offset:-3px; }
-.btn-live {
-  background: linear-gradient(90deg, #ff0000, #ff4d4d);
-  color: #fff;
-  border: none;
-  box-shadow: 0 6px 14px rgba(255, 0, 0, 0.4);
-  animation: livePulse 1.8s infinite;
-}
-.btn-live:hover {
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+.btn-live{
+  background:linear-gradient(90deg,#ff0000,#ff4d4d);
+  color:#fff; border:none; border-radius:14px; font-weight:600;
+  padding:.9rem 1.6rem; animation: livePulse 1.8s infinite;
 }
 @keyframes livePulse{
   0%{ box-shadow:0 0 8px rgba(255,0,0,.4)}

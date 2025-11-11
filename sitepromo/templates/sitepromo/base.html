@@ -10,43 +10,36 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="{{ PROJECT_NAME }} — {{ TAGLINE }}">
   <meta property="og:description" content="Predicción frutícola clara y accionable. Visítanos en la Feria de Software Viña 2025.">
-  <meta property="og:image" content="/static/sitepromo/img/og-cover.jpg">
+  <meta property="og:image" content="{% static 'sitepromo/img/og-cover.jpg' %}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AgroPredict">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="/static/sitepromo/img/logoagropredict.svg" />
+  <link rel="icon" href="{% static 'sitepromo/img/logoagropredict.svg' %}" />
   <!-- Bootstrap 5 + AOS + Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="/static/sitepromo/css/styles.css" rel="stylesheet" />
-  <style>
-    :root{
-      --grad-start: {{ GRADIENT_START }};
-      --grad-end: {{ GRADIENT_END }};
-    }
-  </style>
+  <link href="{% static 'sitepromo/css/styles.css' %}" rel="stylesheet" />
 </head>
 
 <body>
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-<img src="{% static 'sitepromo/img/logoagropredict.svg' %}" alt="AgroPredict" class="logo" />
-  <span class="fw-bold">{{ PROJECT_NAME }}</span>
-</a>
+      <img src="{% static 'sitepromo/img/logoagropredict.svg' %}" alt="AgroPredict" />
+      <span class="fw-bold">{{ PROJECT_NAME }}</span>
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#que-es">Qué es</a></li>
-        <li class="nav-item"><a class="nav-link" href="#por-que">Por qué</a></li>
-        <li class="nav-item"><a class="nav-link" href="#como-funciona">Cómo funciona</a></li>
-        <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+<li class="nav-item"><a class="nav-link" href="/#que-es">Qué es</a></li>
+<li class="nav-item"><a class="nav-link" href="/#por-que">Por qué</a></li>
+<li class="nav-item"><a class="nav-link" href="/#como-funciona">Cómo funciona</a></li>
+<li class="nav-item"><a class="nav-link" href="/#equipo">Equipo</a></li>
         <li class="nav-item"><a class="btn btn-gradient ms-lg-3" href="{{ ENTRADAS_URL }}" target="_blank">🎟️ Entrada gratis</a></li>
       </ul>
     </div>
@@ -73,24 +66,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({
-    duration: 800,        // duración de la animación
-    once: false,          // ❗ permite que se repita cada vez que entras/sales del viewport
-    mirror: true,         // ❗ vuelve a animar cuando haces scroll hacia arriba
-    easing: 'ease-out-cubic'
-  });
-</script>
-<script>
-  window.addEventListener('scroll', function() {
+  AOS.init({ duration: 800, once: false, mirror: true, easing: 'ease-out-cubic' });
+
+  // Navbar cambia a gradiente al pasar el hero
+  window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     const hero = document.querySelector('.hero');
-    const heroHeight = hero.offsetHeight;
-
-    if (window.scrollY > heroHeight * 0.7) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    if (!hero) return;
+    const heroHeight = hero.offsetHeight || 0;
+    if (window.scrollY > heroHeight * 0.7) { navbar.classList.add('scrolled'); }
+    else { navbar.classList.remove('scrolled'); }
   });
 </script>
-
+</body>
+</html>

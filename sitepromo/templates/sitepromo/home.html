@@ -2,7 +2,7 @@
 {% block content %}
 
 <!-- HERO -->
-<section class="hero d-flex align-items-center">
+<section class="hero d-flex align-items-center {% if LIVE_STREAM_ACTIVE %}hero-live{% endif %}">
   <div class="container text-center text-white" data-aos="fade-up">
     <h1 class="display-5 fw-bold mb-3">La agricultura del futuro se predice hoy</h1>
     <p class="sublead lead mb-4">
@@ -11,20 +11,37 @@
       accionables y experiencia personalizable con tus datos.
     </p>
     <div class="d-flex gap-3 justify-content-center mt-4 flex-wrap">
-  <a href="{{ ENTRADAS_URL }}" target="_blank" rel="noopener" class="btn btn-gradient">
-    🎟️ Reservar entrada gratuita
-  </a>
-  <a href="{{ FERIA_URL }}" target="_blank" rel="noopener" class="btn btn-warning text-dark fw-semibold">
-    👀 Ver Feria de Software Viña
-  </a>
-  <a href="https://fdsw.agropredict.tecnologyman.cl" target="_blank" rel="noopener" class="btn btn-success fw-semibold shadow-sm">
-    🚀 Probar la Demo
-  </a>
-</div>
+      <a href="{{ ENTRADAS_URL }}" target="_blank" rel="noopener" class="btn btn-gradient">
+        🎟️ Reservar entrada gratuita
+      </a>
+      <a href="{{ FERIA_URL }}" target="_blank" rel="noopener" class="btn btn-utfsm-yellow fw-semibold">
+        👀 Ver Feria de Software Viña
+      </a>
+      <a href="https://fdsw.agropredict.tecnologyman.cl" target="_blank" rel="noopener" class="btn btn-success fw-semibold shadow-sm">
+        🚀 Probar la Demo
+      </a>
+      {% if LIVE_STREAM_ACTIVE %}
+      <a href="{{ LIVE_STREAM_URL }}" target="_blank" rel="noopener" class="btn btn-live shadow-sm">
+        🔴 Feria de Software en Vivo
+      </a>
+      {% endif %}
+    </div>
+  </div>
 
-
-
+  {% if LIVE_STREAM_ACTIVE %}
+  <script>
+    // Activa halo y compensa la aparición del banner en vivo
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelector(".hero")?.classList.add("live-mode");
+      document.documentElement.classList.add("live-on"); // mueve navbar + padding
+    });
+  </script>
+  {% endif %}
 </section>
+
+{% if LIVE_STREAM_ACTIVE %}
+<div class="live-banner">🔴 Transmisión en curso — Feria de Software Viña 2025</div>
+{% endif %}
 
 <!-- QUÉ ES + PITCH -->
 <section id="que-es" class="py-5">
@@ -142,7 +159,7 @@
   </div>
 </section>
 
-<!-- SECCIÓN SÍGUENOS -->
+<!-- SÍGUENOS -->
 <section id="siguenos" class="py-5 bg-body-tertiary">
   <div class="container" data-aos="zoom-in">
     <div class="follow-box p-4 text-center">
@@ -168,25 +185,22 @@
       Somos un equipo de 5 integrantes de <strong>Ingeniería en Informática — USM Viña del Mar</strong> en colaboración con <strong>Neering</strong>.
       Enfocado en perfiles <strong>gerenciales y administrativos</strong>, integrando <em>dashboard</em>, <em>navaja de herramientas</em> y <em>chatbot IA</em>.
     </p>
-<div class="row g-4">
-  {% for member in team %}
-  <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up">
-    <div class="team-card p-3 h-100">
-      <div class="d-flex align-items-center gap-3">
-        <img src="{{ member.img }}" alt="team" loading="lazy">
-        <div>
-          <div class="fw-semibold">{{ member.name }}</div>
-          <div class="text-secondary small">{{ member.role }}</div>
+
+    <div class="row g-4">
+      {% for member in team %}
+      <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up">
+        <div class="team-card p-3 h-100">
+          <div class="d-flex align-items-center gap-3">
+            <img src="{{ member.img }}" alt="team" loading="lazy">
+            <div>
+              <div class="fw-semibold">{{ member.name }}</div>
+              <div class="text-secondary small">{{ member.role }}</div>
+            </div>
+          </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-  </div>
-  {% endfor %}
-</div>
-
-
-
-
 
     <div class="mt-4">
       <div class="cta-box d-flex flex-wrap align-items-center justify-content-between gap-3" data-aos="fade-up">
