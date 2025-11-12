@@ -10,7 +10,7 @@ TEAM = [
 
 def home(request):
     # Activa/Desactiva modo streaming para el día de la feria
-    LIVE_STREAM_ACTIVE = True  # <-- cámbialo a True cuando haya transmisión
+    LIVE_STREAM_ACTIVE = False  # <-- cámbialo a True cuando haya transmisión
     LIVE_STREAM_URL = "https://www.twitch.tv/tecnologyman"  # pon aquí tu enlace real
 
     return render(request, "sitepromo/home.html", {
